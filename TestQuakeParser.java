@@ -11,10 +11,10 @@ import java.io.IOException;
 import java.util.NoSuchElementException;
 public class TestQuakeParser
 {
-	private static final String pastHourURL="https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.atom";
-	private static final String pastDayURL="https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.atom";
-	private static final String pastWeekURL="https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.atom";
-	private static final String pastMonthURL="https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.atom";
+	private static final String PAST_HOUR_URL="https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.atom";
+	private static final String PAST_DAY_URL="https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.atom";
+	private static final String PAST_WEEK_URL="https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.atom";
+	private static final String PAST_MONTH_URL="https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.atom";
 	public static void main(String[] args)
 	{
 		testing();
@@ -72,10 +72,10 @@ public class TestQuakeParser
 		try{
 		switch(new Scanner(System.in).nextInt())
 		{
-			case 1:parser=new EarthQuakesParser(new URL(pastHourURL)); break;
-			case 2:parser=new EarthQuakesParser(new URL(pastDayURL)); break;
-			case 3:parser=new EarthQuakesParser(new URL(pastWeekURL)); break;
-			case 4:parser=new EarthQuakesParser(new URL(pastMonthURL)); break;
+			case 1:parser=new EarthQuakesParser(new URL(PAST_HOUR_URL)); break;
+			case 2:parser=new EarthQuakesParser(new URL(PAST_DAY_URL)); break;
+			case 3:parser=new EarthQuakesParser(new URL(PAST_WEEK_URL)); break;
+			case 4:parser=new EarthQuakesParser(new URL(PAST_MONTH_URL)); break;
 			default:System.out.println("wrong input!");return;
 		}
 		}catch(IOException | NoSuchElementException ex){System.out.println("Incorrect response, causing termination!"); return;}
